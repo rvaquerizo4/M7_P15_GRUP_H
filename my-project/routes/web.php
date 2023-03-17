@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PeliculaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\MainController@arrel') -> name('entrada');
+
+Route::get('/peliculas', [PeliculaController::class, 'index']) -> name('pelicula');
+
+Route::get('/peliculas/create', [PeliculaController::class, 'create']) -> name('create');
+
+Route::post('/peliculas/store', [PeliculaController::class, 'store']) -> name('store');
