@@ -2,10 +2,10 @@
 @section('page-title', 'Edit')
 @section('content')
 
-<form action="{{ route('store') }}" method="POST"
+<form action="{{ route('pelicula.update', ['id' => $pelicula->id]) }}" method="POST"
     class="bg-white w-1/3 p-4 border-gray-10@ shadow-xl rounded-lg">
     @csrf
-
+    @method('put')
     <h2 class="text-2xl text-center py-4 mb-4 font-semibold">
         Edit Pelicula {{ $pelicula->id }}
     </h2>

@@ -43,29 +43,34 @@ class PeliculaController extends Controller
     }
 
 
-    public function edit(Pelicula $pelicula)
+    public function edit($id)
     {
         // funcion para modificar
-        $pelicula = Pelicula::find($pelicula);
+        $pelicula = Pelicula::find($id);
 
         return view("peliculas.edit", compact("pelicula"));
     }
 
 
-    public function update(Request $request, Pelicula $pelicula)
+    public function update(Request $request, $id)
     {
-        //
+        $pelicula = Pelicula::find($id);
+    
+        $pelicula->update($request->all());
+    
+        return redirect()->route('pelicula');
     }
+    
 
 
-    public function destroy(Pelicula $pelicula)
+    public function destroy($id)
     {
         // Funcion para eliminar 
-        $pelicula = Pelicula::find($pelicula);
+        $pelicula = Pelicula::find($id);
         
         $pelicula->delete();
 
         
-        return redirect()->route('peliculas.index');
+        return redirect()->route('pelicula');
     }
 }

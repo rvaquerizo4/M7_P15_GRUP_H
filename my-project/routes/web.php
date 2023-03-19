@@ -14,6 +14,7 @@ use App\Http\Controllers\PeliculaController;
 |
 */
 
+
 Route::get('/', 'App\Http\Controllers\MainController@arrel') -> name('entrada');
 
 Route::get('/peliculas', [PeliculaController::class, 'index']) -> name('pelicula');
@@ -22,4 +23,9 @@ Route::get('/peliculas/create', [PeliculaController::class, 'create']) -> name('
 
 Route::post('/peliculas/store', [PeliculaController::class, 'store']) -> name('store');
 
-Route::resource('peliculas', PeliculaController::class);
+Route::get('/peliculas/{pelicula}/edit', [PeliculaController::class, 'edit'])->name('pelicula.edit');
+
+Route::put('/peliculas/{id}', [PeliculaController::class, 'update'])->name('pelicula.update');
+
+Route::delete('/peliculas/{id}', [PeliculaController::class, 'destroy'])->name('pelicula.destroy');
+

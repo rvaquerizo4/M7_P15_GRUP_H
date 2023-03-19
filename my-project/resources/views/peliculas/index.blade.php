@@ -23,16 +23,15 @@
         <td class="p-3 text-center">{{ $row -> genero }}</td>
         <td class="p-3 text-center">{{ $row -> precio }}</td>
         <td class="p-3 flex justify-center">
-          <form action="{{ route('peliculas.destroy', $row->id)}}" method="POST">
+          <form action="{{ route('pelicula.destroy', $row->id) }}" method="POST">
             @csrf
             @method('delete')
-            <button class="bg-red-500 text-white px-3 py-1 rounded-sm">
+            <button class="bg-red-500 text-white px-3 py-1 rounded-sm mx-1">
               <i class="fas fa-trash"></i></button>
           </form>
 
-          
-          <button class="bg-green-500 text-white px-3 py-1 rounded-sm">
-            <i class="fas fa-pen"></i></button>
+          <a href="{{ route('pelicula.edit', $row->id) }}" class="bg-green-500 text-white px-3 py-1 rounded-sm">
+            <i class="fas fa-pen"></i></a>
         </td>
       </tr>
       @endforeach
