@@ -45,7 +45,10 @@ class PeliculaController extends Controller
 
     public function edit(Pelicula $pelicula)
     {
-        //
+        // funcion para modificar
+        $pelicula = Pelicula::find($pelicula);
+
+        return view("peliculas.edit", compact("pelicula"));
     }
 
 
@@ -57,6 +60,12 @@ class PeliculaController extends Controller
 
     public function destroy(Pelicula $pelicula)
     {
-        //
+        // Funcion para eliminar 
+        $pelicula = Pelicula::find($pelicula);
+        
+        $pelicula->delete();
+
+        
+        return redirect()->route('peliculas.index');
     }
 }
