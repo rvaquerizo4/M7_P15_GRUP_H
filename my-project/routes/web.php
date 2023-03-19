@@ -21,3 +21,5 @@ Route::get('/peliculas', [PeliculaController::class, 'index']) -> name('pelicula
 Route::get('/peliculas/create', [PeliculaController::class, 'create']) -> name('create');
 
 Route::post('/peliculas/store', [PeliculaController::class, 'store']) -> name('store');
+
+Route::resource('peliculas', PeliculaController::class);
