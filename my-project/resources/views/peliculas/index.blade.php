@@ -31,8 +31,8 @@
           </form>
 
           
-          <button class="bg-green-500 text-white px-3 py-1 rounded-sm">
-            <i class="fas fa-pen"></i></button>
+          <a href="{{ route(peliculas.edit), $row->id}}" class="bg-green-500 text-white px-3 py-1 rounded-sm">
+            <i class="fas fa-pen"></i></a>
         </td>
       </tr>
       @endforeach
