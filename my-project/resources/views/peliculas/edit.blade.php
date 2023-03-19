@@ -22,8 +22,8 @@
     <input class="my-2 w-full bg-gray-200 p-2 text-lg rounded"
     placeholder="precio" name="precio" value="{{ $pelicula->precio }}">
 
-    <button type="submit" class="my-3 w-full bg-blue-500@ p-2 font-semibold
-    rounded text-white hover: bg-blue-600">Enviar</button>
+    <button type="submit" class="my-3 w-full bg-green-500@ p-2 font-semibold
+    rounded text-white hover: bg-green-600">Enviar</button>
 
 </form>
 
